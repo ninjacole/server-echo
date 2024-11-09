@@ -15,7 +15,7 @@ class WebSocketServer {
         this._server.on("connection", (socket: WebSocket) => {
             console.log("A client just connected.");
 
-            this._server.on('message', (message: WebSocket.RawData) => {
+            socket.on('message', (message: WebSocket.RawData) => {
                 console.log(message);
 
                 this.broadcastMessage(message.toString());
