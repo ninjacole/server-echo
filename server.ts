@@ -17,7 +17,7 @@ class WebSocketServer {
 
             socket.on('message', (message: string) => {
                 console.log(message);
-                this.broadcastMessage(message.slice().toString());
+                this.broadcastMessage(message);
             });
         });
 
