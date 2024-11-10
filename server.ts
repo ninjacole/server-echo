@@ -18,6 +18,7 @@ class WebSocketServer {
             socket.on('message', (data: WebSocket.RawData, isBinary: boolean) => {
                 if (!isBinary) {
                     const message = data.toString();
+                    console.log(message);
                     this.broadcastMessage(message);
                 }
             });
